@@ -1,13 +1,11 @@
-val commonSettings = Seq(
-  organization := "yuiwai.com",
-  version := "0.1.0",
-  scalaVersion := "2.12.4"
-)
+organization in ThisBuild := "com.yuiwai"
+version in ThisBuild := "0.1.0"
+scalaVersion in ThisBuild := "2.12.4"
+
 lazy val coreDependency = core % "test->test;compile->compile"
 
 lazy val core = (project in file("core"))
   .settings(
-    commonSettings,
     name := "moiwa-core",
     libraryDependencies ++= Seq(
       "org.scalactic" %% "scalactic" % "3.0.1",
@@ -15,3 +13,8 @@ lazy val core = (project in file("core"))
     )
   )
 
+lazy val scene = (project in file("scene"))
+  .settings(
+    name := "moiwa-scene"
+  )
+  .dependsOn(core)
