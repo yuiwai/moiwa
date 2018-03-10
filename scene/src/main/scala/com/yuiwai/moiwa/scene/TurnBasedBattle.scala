@@ -1,8 +1,8 @@
 package com.yuiwai.moiwa.scene
 
-import com.yuiwai.moiwa.battle.{BattleLike, EnemySide, PlayerSide, SideLike}
+import com.yuiwai.moiwa.battle._
 
-trait TurnBasedBattle extends BattleLike {
+trait TurnBasedBattle extends TurnBasedBattleLike {
   val playerSide: PlayerSide
   val enemySide: EnemySide
   val currentSide: SideLike
