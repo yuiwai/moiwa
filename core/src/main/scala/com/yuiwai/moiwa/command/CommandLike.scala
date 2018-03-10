@@ -1,4 +1,4 @@
-package com.yuiwai.moiwa.battle
+package com.yuiwai.moiwa.command
 
 trait CommandLike {
   val source: CommandSourceLike
