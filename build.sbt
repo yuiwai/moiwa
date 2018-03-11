@@ -13,8 +13,14 @@ lazy val core = (project in file("core"))
     )
   )
 
+lazy val components = (project in file("components"))
+  .settings(
+    name := "moiwa-components"
+  )
+  .dependsOn(core)
+
 lazy val scene = (project in file("scene"))
   .settings(
     name := "moiwa-scene"
   )
-  .dependsOn(core)
+  .dependsOn(components)
