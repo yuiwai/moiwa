@@ -11,4 +11,5 @@ trait PvE extends VersusMode
 trait TurnBasedBattleLike extends BattleLike {
   val turnLimit: Option[Int]
 }
+trait SpeedBasedBattleLike extends BattleLike
 trait BattleTurn extends TurnLike
