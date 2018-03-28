@@ -5,5 +5,5 @@ trait ActorQueueLike {
   type ActorId = SpeedBasedActor#Id
   val actors: Map[ActorId, Int]
   def take(n: Int): Seq[ActorId]
-  def resolveActor(actorId: ActorId): ActorLike
+  def resolveActor(actorId: ActorId): SpeedBasedActor
 }
