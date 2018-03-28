@@ -4,7 +4,7 @@ import com.yuiwai.moiwa.battle.{EnemySide, PlayerSide, SideLike, TurnBasedBattle
 import com.yuiwai.moiwa.components.PvEBattleComponents
 
 case class TurnBasedPvEBattle(
-  turnLimit: Int,
+  turnLimit: Option[Int],
   playerSide: PlayerSide,
   enemySide: EnemySide,
   currentSide: SideLike) extends PvEBattleComponents

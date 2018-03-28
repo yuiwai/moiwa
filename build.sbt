@@ -24,3 +24,6 @@ lazy val scene = (project in file("scene"))
     name := "moiwa-scene"
   )
   .dependsOn(components)
+
+lazy val example = (project in file("example"))
+  .dependsOn(scene)
