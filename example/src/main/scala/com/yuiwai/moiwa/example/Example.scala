@@ -1,11 +1,41 @@
 package com.yuiwai.moiwa.example
 
 import com.yuiwai.moiwa.battle.{ActorIdLike, ActorQueueLike, SpeedBasedActorLike}
+import com.yuiwai.moiwa.level.{ExpBasedLevel, ExpBasedLevelCompanionLike, ExpBasedLevelSpec, LevelCatalogLike}
 
 import scala.collection.SortedSet
 
 object Example extends App {
+  LevelExample.run()
   ActorQueueExample.run()
+}
+
+object LevelExample {
+  case class Level(
+    levelId: Int, nextLevelId: Option[Int],
+    nextLevelExp: Option[Long],
+    totalExp: Long,
+    value: Int
+  ) extends ExpBasedLevel[Int, Level, LevelSpec] {
+    override val companion: ExpBasedLevelCompanionLike[Level] = Level
+  }
+  object Level extends ExpBasedLevelCompanionLike[Level] {
+    override def build(): Level = Level(0, None, None, 0, 0)
+  }
+  case class LevelSpec(
+    nextLevelId: Option[Int],
+    nextLevelExp: Option[Long],
+    levelId: Int,
+    value: Int
+  ) extends ExpBasedLevelSpec[Int]
+  class LevelCatalog extends LevelCatalogLike[Int, LevelSpec] {
+    override def resolve(levelId: Int): Option[LevelSpec] = ???
+  }
+  def run(): Unit = {
+    val level = Level.build()
+    implicit val levelCatalog = new LevelCatalog
+    level.addExp(10)
+  }
 }
 
 object ActorQueueExample {
