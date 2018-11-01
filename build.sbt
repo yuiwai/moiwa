@@ -25,5 +25,8 @@ lazy val scene = (project in file("scene"))
   )
   .dependsOn(components)
 
+lazy val `min-rpg` = (project in file("min-rpg"))
+  .dependsOn(scene)
+
 lazy val example = (project in file("example"))
   .dependsOn(scene)
