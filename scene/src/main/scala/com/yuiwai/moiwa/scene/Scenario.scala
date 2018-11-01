@@ -1,4 +1,4 @@
 package com.yuiwai.moiwa.scene
 
-trait Scenario
+trait Scenario extends Scene
 
