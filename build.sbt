@@ -1,5 +1,5 @@
 organization in ThisBuild := "com.yuiwai"
-version in ThisBuild := "0.1.0"
+version in ThisBuild := "0.2.0-SNAPSHOT"
 scalaVersion in ThisBuild := "2.12.4"
 
 lazy val coreDependency = core % "test->test;compile->compile"
@@ -11,6 +11,11 @@ lazy val core = (project in file("core"))
       "org.scalactic" %% "scalactic" % "3.0.1",
       "org.scalatest" %% "scalatest" % "3.0.1" % Test
     )
+  )
+
+lazy val vcon = (project in file("vcon"))
+  .settings(
+    name := "moiwa-vcon"
   )
 
 lazy val components = (project in file("components"))
