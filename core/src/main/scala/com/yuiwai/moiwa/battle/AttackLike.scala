@@ -1,4 +1,4 @@
 package com.yuiwai.moiwa.battle
 
-trait LifeLike
+trait AttackLike
 
