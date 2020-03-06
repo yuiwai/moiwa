@@ -15,7 +15,11 @@ lazy val core = (project in file("core"))
 
 lazy val vcon = (project in file("vcon"))
   .settings(
-    name := "moiwa-vcon"
+    name := "moiwa-vcon",
+    libraryDependencies ++= Seq(
+      "org.scalactic" %% "scalactic" % "3.0.1",
+      "org.scalatest" %% "scalatest" % "3.0.1" % Test
+    )
   )
 
 lazy val components = (project in file("components"))
