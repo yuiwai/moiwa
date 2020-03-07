@@ -1,6 +1,6 @@
 organization in ThisBuild := "com.yuiwai"
 version in ThisBuild := "0.2.0-SNAPSHOT"
-scalaVersion in ThisBuild := "2.12.4"
+scalaVersion in ThisBuild := "2.13.1"
 
 lazy val coreDependency = core % "test->test;compile->compile"
 
@@ -8,8 +8,8 @@ lazy val core = (project in file("core"))
   .settings(
     name := "moiwa-core",
     libraryDependencies ++= Seq(
-      "org.scalactic" %% "scalactic" % "3.0.1",
-      "org.scalatest" %% "scalatest" % "3.0.1" % Test
+      "org.scalactic" %% "scalactic" % "3.1.1",
+      "org.scalatest" %% "scalatest" % "3.1.1" % Test
     )
   )
 
